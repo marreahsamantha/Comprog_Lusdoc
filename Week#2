@@ -1,0 +1,20 @@
+sam_var = "sam"
+
+fullname = "Marreah Samantha C. Lusdoc"
+print(f"Fullname : {fullname}")
+print(type(fullname))
+
+
+age = 18
+print(f"\nAge      : {age}")
+print(type(age))
+
+   
+height_meters = 1.60
+print(f"\nHeight_meters : {height_meters}")
+print(type(height_meters))
+
+   
+currently_working = False
+print(f"\nCurrently_working?: {currently_working}")
+print(type(currently_working))
