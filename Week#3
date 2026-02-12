@@ -1,0 +1,9 @@
+name = ""
+age = 0
+
+print("Marreah Samantha C. Lusdoc\nLaboratory Activity")
+name = input("\nEnter your name:\n")
+age = input("How old are you?\n")
+
+print("Hello!!", name, "Don't forget to smile always.")
+print("Good to know that you're,", age, "years old.")
