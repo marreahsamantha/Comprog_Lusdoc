@@ -1,0 +1,48 @@
+user_list = []
+
+# Main menu (CRUD)
+def main_menu():
+    while True:
+        print("\n---MAIN MENU---")
+        print("C - create user")
+        print("R - read or view")
+        print("U - update")
+        print("D - delete")
+        print("E - exit")
+
+        option = input("Enter CRUD option: ").upper()
+
+        if option == 'C':
+            add = input("Enter new user: ")
+            user_list.append(add)
+            print(user_list)
+
+        elif option == 'R':
+            print("List:", user_list)
+
+        elif option == 'U':
+            update = input("Which user do you want to update? ")
+            if update in user_list:
+                index = user_list.index(update)
+                new_val = input("Enter new user to update: ")
+                user_list[index] = new_val
+                print("List updated.")
+            else:
+                print("User not found.")
+
+        elif option == 'D':
+            remove = input("Select a user to delete: ")
+            if remove in user_list:
+                user_list.remove(remove)
+                print("User removed.")
+            else:
+                print("User not found.")
+
+        elif option == 'E':
+            print("Exiting program...")
+            break
+
+        else:
+            print("Invalid input. Choose C, R, U, D, or E.")
+
+main_menu()
