@@ -1,0 +1,57 @@
+# define a class
+class ShoppingCart:
+    items = []
+
+    # Add Items
+    def add(self):
+        item = input("Enter item to add to cart: ")
+        self.items.append(item)
+        print(item, "added to cart")
+
+    # Remove Items
+    def remove(self):
+        item = input("Enter item to remove to cart: ")
+        if item in self.items:
+            self.items.remove(item)
+            print(item, "removed from cart")
+        else:
+            print("Item not found")
+
+    # View to cart
+    def view(self):
+        print("Items in cart:", self.items)
+
+    # Checkout to cart
+    def checkout(self):
+        print("Checkout items:", self.items)
+        print("Thank you for shopping!")
+
+
+# create objects
+cart = ShoppingCart()
+
+while True:
+    print("\nShopping Cart Menu")
+    print("A - Add Item")
+    print("R - Remove Item")
+    print("V - View Cart")
+    print("C - Checkout")
+    print("E - Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "A":
+        cart.add()
+
+    elif choice == "R":
+        cart.remove()
+
+    elif choice == "V":
+        cart.view()
+
+    elif choice == "C":
+        cart.checkout()
+
+    elif choice == "E":
+        print("Exit, Thank you for shopping")
+        break
