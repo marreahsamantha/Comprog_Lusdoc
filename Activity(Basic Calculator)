@@ -1,0 +1,38 @@
+while True:
+    print("------Basic Calculator------")
+    print("+  Addition")
+    print("-  Subtraction")
+    print("*  Multiplication")
+    print("/  Division")
+    print("E  Exit")
+
+    operation = input("Enter operation (+, -, *, /): ")
+
+    if operation == 'E' or operation == 'e':
+        print("\nExiting the program.Thank you for using the Basic Calculator!")
+        break
+
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("ERROR! Input numbers only!")
+        continue
+
+    if operation == '+':
+        print("Answer:", num1 + num2)
+
+    elif operation == '-':
+        print("Answer:", num1 - num2)
+
+    elif operation == '*':
+        print("Answer:", num1 * num2)
+
+    elif operation == '/':
+        if num2 != 0:
+            print("Answer:", num1 / num2)
+        else:
+            print("Cannot divide by 0")
+
+    else:
+        print("Invalid. Try again.")
