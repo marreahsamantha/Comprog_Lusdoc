@@ -1,0 +1,46 @@
+try:
+    f = open("task.txt", "x")
+    print("File created successfully")
+    f.close()
+except FileExistsError:
+    print("File already exists")
+
+while True:
+    print("\nTO-DO LIST SYSTEM")
+    print("1.Add Task")
+    print("2.View Tasks")
+    print("3.Exit")
+
+    try:
+        choice = int(input("Enter your choice: "))
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        continue
+
+    if choice == 1:
+        task = input("Enter your task: ")
+        try:
+            with open("task.txt", "a") as f:
+                f.write(task + "\n")
+            print("Task added successfully!")
+        except:
+            print("File error.")
+
+    elif choice == 2:
+        try:
+            with open("task.txt", "r") as f:
+                tasks = f.read()
+                if tasks:
+                    print("\nYour Tasks:")
+                    print(tasks)
+                else:
+                    print("No tasks found!")
+        except:
+            print("File cannot be read.")
+
+    elif choice == 3:
+        print("Exciting. Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
